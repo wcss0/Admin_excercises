@@ -1,0 +1,5 @@
+Problem /dev/shm ma klastrze supernowa
+Dotychczas wydawało się, że przepełnienie tego katalogu powodują użytkownicy, właściciele podkatalogów /dev/shm
+Okazało się, że źródłem problemu jest program ADF, oprogramowaniem służącym do obliczeń metodami wywodzącymi się z teorii funkcjonału gęstości. 
+Program tworzy w katalogu niewidoczne pliki.  ADF tworzy pliki w /dev/shm, które są potem kasowane, ale program ich nie zwalnia, 
+więc system postrzega je jako zajmujące miejsce (bo pewnie dalej z nich można czytać).
